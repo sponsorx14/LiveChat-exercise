@@ -1,0 +1,221 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  font-size: 62.5%;
+  font-family: 'Roboto Slab', serif;
+}
+
+.container {
+  margin: 0;
+  height: 100vh;
+  max-width: 100vw;
+}
+
+.container .renderElement {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.container .form-title {
+  text-align: center;
+  margin-top: 0.5rem;
+  color: #7AA3CC;
+  font-size: 2rem;
+}
+
+.container .form {
+  width: 600px;
+}
+
+.container .form .form-container {
+  -webkit-box-shadow: 0 0 10px 10px #ccc;
+  box-shadow: 0 0 10px 10px #ccc;
+  border-radius: 20px;
+  padding: 1rem 0;
+}
+
+.container .form .form-container .form-control {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+.container .form .form-container .form-control .label-text {
+  padding: 0.5rem 0;
+  color: #7AA3CC;
+}
+
+.container .form .form-container .form-control input {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 1px solid #7AA3CC;
+  border-left: 1px solid #7AA3CC;
+}
+
+.container .form .form-container .form-control input:focus {
+  outline: none;
+}
+
+.container .form .form-container .form-control .has-error {
+  color: #ff0000;
+  margin: 0;
+  padding: 0.5rem 0;
+  font-size: 1.2rem;
+  height: 25px;
+  margin-bottom: 1rem;
+}
+
+.container .form .form-container .form-checkbox label {
+  display: inline-block;
+  padding: 6px 2rem;
+  margin: 1rem 0;
+  font-size: 10px;
+  line-height: 2em;
+  cursor: pointer;
+  background-color: none;
+  border: 0 solid #c8c8c8;
+  border-radius: 3px;
+  color: #c8c8c8;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.container .form .form-container .form-checkbox label.active,
+.container .form .form-container .form-checkbox label:hover {
+  color: #7AA3CC;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.container .form .form-container .checkbox-label span {
+  font-size: 1.2rem;
+}
+
+.container .form .form-container .checkbox-label input {
+  display: none;
+}
+
+.container .form .form-container .checkbox-label input ~ i.fa.fa-square-o {
+  color: #c8c8c8;
+  display: inline;
+}
+
+.container .form .form-container .checkbox-label input ~ i.fa.fa-check-square-o {
+  display: none;
+}
+
+.container .form .form-container .checkbox-label input:checked ~ i.fa.fa-square-o {
+  display: none;
+}
+
+.container .form .form-container .checkbox-label input:checked ~ i.fa.fa-check-square-o {
+  color: #7AA3CC;
+  display: inline;
+}
+
+.container .form .form-container .checkbox-label:hover input ~ i.fa {
+  color: #7AA3CC;
+}
+
+.container .form .form-container .button-submit {
+  cursor: pointer;
+  display: block;
+  margin: 1rem auto;
+  background-color: #7AA3CC;
+  font-size: 1.2rem;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.container .form .form-container .button-submit:focus {
+  outline: none;
+}
+
+.container .form .form-container .button-submit:hover {
+  background-color: rgba(122, 163, 204, 0.8);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.container .success-message {
+  margin: 0 .5rem;
+  padding: 3rem;
+  border: 5px solid #ccc;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 0 10px 10px #ccc;
+  box-shadow: 0 0 10px 10px #ccc;
+  text-align: center;
+  max-width: 600px;
+}
+
+.container .success-message .success-message-icon {
+  max-width: 100px;
+}
+
+.container .success-message .icon-checkmark {
+  fill: #3DC480;
+}
+
+.container .success-message .success-message-title {
+  margin-top: 0;
+  color: #3DC480;
+  padding: 0.5rem;
+}
+
+.container .success-message .success-message-content p {
+  font-size: 0.9rem;
+}
+
+.container .success-message .success-message-content p .email-bold {
+  font-weight: 700;
+}
+
+.container .success-message .go-back {
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+  border-radius: 10px;
+  background-color: #3DC480;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.container .success-message .go-back:focus {
+  outline: none;
+}
+
+.container .success-message .go-back:hover {
+  background-color: rgba(61, 196, 128, 0.8);
+  -webkit-transition: .3s;
+  transition: .3s;
+}

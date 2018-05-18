@@ -1,0 +1,222 @@
+$light-blue: #7AA3CC;
+$success-primary: #3DC480;
+$red: #ff0000;
+$white: #fff;
+$grey: #ccc;
+$grey2: #c8c8c8;
+
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  font-size: 62.5%;
+  font-family: 'Roboto Slab', serif;
+}
+
+.container {
+  margin: 0;
+  height: 100vh;
+  max-width: 100vw;
+
+  .renderElement {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .form-title {
+    text-align: center;
+    margin-top: 0.5rem;
+    color: $light-blue;
+    font-size: 2rem;
+  }
+
+  .form {
+    width: 600px;
+
+    .form-container {
+      -webkit-box-shadow: 0 0 10px 10px $grey;
+      box-shadow: 0 0 10px 10px $grey;
+      border-radius: 20px;
+      padding: 1rem 0;
+      .form-control {
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        position: relative;
+
+        .label-text {
+          padding: 0.5rem 0;
+          color: $light-blue;
+        }
+
+        input {
+          font-size: 1.2rem;
+          padding: 0.5rem;
+          border: none;
+          border-bottom: 1px solid $light-blue;
+          border-left: 1px solid $light-blue;
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .has-error {
+          color: $red;
+          margin: 0;
+          padding: 0.5rem 0;
+          font-size: 1.2rem;
+          height: 25px;
+          margin-bottom: 1rem;
+        }
+      }
+
+      .form-checkbox label {
+        display: inline-block;
+        padding: 6px 2rem;
+        margin: 1rem 0;
+        font-size: 10px;
+        line-height: 2em;
+        cursor: pointer;
+        background-color: none;
+        border: 0 solid $grey2;
+        border-radius: 3px;
+        color: $grey2;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+      }
+
+      .form-checkbox label.active,
+      .form-checkbox label:hover {
+        color: $light-blue;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+
+      .checkbox-label span {
+        font-size: 1.2rem;
+      }
+
+      .checkbox-label input {
+        display: none;
+      }
+
+      .checkbox-label input ~ i.fa.fa-square-o {
+        color: $grey2;
+        display: inline;
+      }
+
+      .checkbox-label input ~ i.fa.fa-check-square-o {
+        display: none;
+      }
+
+      .checkbox-label input:checked ~ i.fa.fa-square-o {
+        display: none;
+      }
+
+      .checkbox-label input:checked ~ i.fa.fa-check-square-o {
+        color: $light-blue;
+        display: inline;
+      }
+
+      .checkbox-label:hover input ~ i.fa {
+        color: $light-blue;
+      }
+
+      .button-submit {
+        cursor: pointer;
+        display: block;
+        margin: 1rem auto;
+        background-color: $light-blue;
+        font-size: 1.2rem;
+        color: $white;
+        border: none;
+        border-radius: 10px;
+        padding: 1rem 2rem;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+        &:focus {
+          outline: none;
+        }
+        &:hover {
+          background-color: rgba(122, 163, 204, .8);
+          -webkit-transition: 0.3s;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+  .success-message {
+    margin: 0 .5rem;
+    padding: 3rem;
+    border: 5px solid $grey;
+    border-radius: 20px;
+    -webkit-box-shadow: 0 0 10px 10px $grey;
+    box-shadow: 0 0 10px 10px $grey;
+    text-align: center;
+    max-width: 600px;
+
+    .success-message-icon {
+      max-width: 100px;
+    }
+
+    .icon-checkmark {
+      fill: $success-primary;
+    }
+
+    .success-message-title {
+      margin-top: 0;
+      color: $success-primary;
+      padding: 0.5rem;
+    }
+
+    .success-message-content p {
+      font-size: 0.9rem;
+
+      .email-bold {
+        font-weight: 700;
+      }
+    }
+    .go-back {
+
+      margin-top: 1rem;
+      padding: 1rem 2rem;
+      color: $white;
+      cursor: pointer;
+      border: 0;
+      border-radius: 10px;
+      background-color: $success-primary;
+      -webkit-transition: .3s;
+      transition: .3s;
+      &:focus{
+        outline: none;
+      }
+      &:hover {
+        background-color: rgba(61, 196, 128, .8);
+        -webkit-transition: .3s;
+        transition: .3s;
+      }
+    }
+  }
+}
