@@ -1,15 +1,15 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { submitUser } from '../actions';
 
-import Success from './Success';
+import SuccessRegister from './SuccessRegister';
 
 // INITIAL STATE
 const initialState = {
   email: '',
   password: '',
-  checkbox: false,
   touched: {
     emailTouched: false,
     passwordTouched: false,
@@ -18,7 +18,7 @@ const initialState = {
   submitRequest: false
 }
 
-class Form extends Component {
+class FormRegister extends Component {
   constructor(props){
     super(props);
 
@@ -67,8 +67,8 @@ class Form extends Component {
   //FUNCTION RESPONSIBLE FOR SUBMITTING FORM AND SAVING DATA IN db.json
   sumbitForm(e){
     e.preventDefault();
-    const {email, password, checkbox} = this.state;
-    const values = { email, password, checkbox}
+    const {email, password} = this.state;
+    const values = { email, password}
     const errors = this.validateForm(values);
 
     this.validateForm(values);
@@ -78,6 +78,11 @@ class Form extends Component {
       this.setState({ isSubmitted: true });
       this.props.submitUser(values);
     }
+  }
+
+  // FUNCTION RESPONSIBLE FOR RENDERING SUCCESS COMPONENT
+  renderSuccess(){
+    return <SuccessRegister email={this.state.email} back={this.resetForm.bind(this)}/>
   }
 
   //FUNCTION RESPONSIBLE FOR RENDERING FORM
@@ -90,7 +95,7 @@ class Form extends Component {
     return (
       <form className='form' onSubmit={this.sumbitForm.bind(this)}>
         <fieldset className='form-container'>
-          <h1 className='form-title'>LOGIN</h1>
+          <h1 className='form-title'>Register</h1>
           <div className='form-control'>
             <label className='label-text'>Email:</label>
             <input
@@ -111,28 +116,12 @@ class Form extends Component {
             />
             <p className='has-error'>{passwordTouched || submitRequest ? password : ''}</p>
           </div>
-          <div className='form-checkbox' data-toggle="buttons">
-            <label className="active checkbox-label">
-              <input
-                className='checkboxSquare'
-                type="checkbox"
-                value={this.state.checkbox}
-                onChange={() => this.setState({checkbox: !this.state.checkbox})}
-              />
-              <i className="fa fa-square-o fa-2x"></i>
-              <i className="fa fa-check-square-o fa-2x"></i>
-              <span> Remember Me</span>
-            </label>
-          </div>
-          <button className='button-submit' type='submit'>Submit</button>
+          <button className='button-submit' type='submit'>Register</button>
+          <p className='register-back-text'>You already have an account? Click
+            <Link to='/'> here </Link>
+            to login</p>
         </fieldset>
       </form>
-    )
-  }
-  // FUNCTION RESPONSIBLE FOR RENDERING SUCCESS COMPONENT
-  renderSuccess(){
-    return (
-      <Success email={this.state.email} back={this.resetForm.bind(this)}/>
     )
   }
   render(){
@@ -145,4 +134,4 @@ class Form extends Component {
   }
 }
 
-export default connect(null, { submitUser })(Form);
+export default connect(null, { submitUser })(FormRegister);

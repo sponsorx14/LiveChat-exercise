@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import Form from './components/Form';
+import FormRegister from './components/FormRegister';
+import FormLogin from './components/FormLogin';
 import reducers from './reducers';
 
 const store = createStore(
@@ -14,6 +16,11 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <Form />
+    <BrowserRouter>
+      <Switch>
+        <Route path='/register' component={FormRegister} />
+        <Route path='/' component={FormLogin}/>
+      </Switch>
+    </BrowserRouter>
   </Provider>
   , document.querySelector('.container'));

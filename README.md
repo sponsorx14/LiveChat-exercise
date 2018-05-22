@@ -2,15 +2,17 @@ HELLO
 
 INSTRUCTIONS
 
-git clone https://github.com/sponsorx14/Job-Appllication.git
+git clone https://github.com/sponsorx14/LiveChat-exercise.git
 
-cd Job-application
+cd LiveChat-exercise
 
 npm install
 
+open terminal
+
 json-server --watch db.json
 
-OPEN NEW TERMINAL
+open new terminal
 
 npm start
 
